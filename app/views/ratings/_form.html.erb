@@ -1,0 +1,88 @@
+<div id='scratch'> </div>
+<div id="ratings_form">
+  <div class="well">
+      <fieldset class="rating">
+          <%#<legend>Please rate:</legend>%>
+          <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Rocks!">5 stars</label>
+          <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Pretty good">4 stars</label>
+          <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Meh">3 stars</label>
+          <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Kinda bad">2 stars</label>
+          <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+      </fieldset>
+  </div>
+  <%= form_for(@rating, :remote => true, :html => {:class => "well"}) do |f| %>
+      <% if @rating.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@rating.errors.count, "error") %> prohibited this rating from being saved:</h2>
+
+          <ul>
+          <% @rating.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <!--<%= f.label :listing_id %><br />-->
+      <%= f.hidden_field :listing_id, :value => @listing.id %>
+
+      <%#= f.label :stars %>
+      <br />
+      <%= f.hidden_field :stars %>
+      <!--<%= f.label :rater_id %><br />-->
+      <%= f.hidden_field :rater_id, :value => @rater.id %>
+      <%= f.label :comment %><br />
+      <%= f.text_area :rater_comment %>
+      <%= f.submit 'Rate!', :class => "btn btn-primary"  %>
+  <% end %>
+</div>
+
+<%= javascript_tag do %>
+  /**** Sets the appropriate numeric value for stars input element ****/
+  $(document).ready( function() {
+    $('#star1').click( function() {
+      $('#rating_stars').attr('value', 1);
+    });
+    $('#star2').click( function() {
+      $('#rating_stars').attr('value', 2);
+    });
+    $('#star3').click( function() {
+      $('#rating_stars').attr('value', 3);
+    });
+    $('#star4').click( function() {
+      $('#rating_stars').attr('value', 4);
+    });
+    $('#star5').click( function() {
+      $('#rating_stars').attr('value', 5);
+    });
+  }
+  );
+
+<% end %>
+
+
+<%= javascript_tag do %>
+  $(document).ready( function() {
+    $('#ratings_form')
+      .bind("ajax:beforeSend", function(evt, xhr, settings) {
+       // alert("beforeSend");
+        var $submitButton = $(this).find('input[name="commit"]');
+
+        $submitButton.data('origText', $(this).prop("value") );
+        $submitButton.prop("value", "Submitting...");
+      })
+      .bind("ajax:complete", function(evt, xhr, status) {
+      // alert("ajax:complete");
+        var $submitButton = $(this).find('input[name="commit"]');
+        $submitButton.prop("value", "Done!");
+
+        $("#scratch").hide();
+        $("#ratings_form").hide("slow");
+        $("#scratch").append(xhr.responseText);
+        $("#scratch").show("slow");
+      })
+    }
+  );
+<% end %>
+
+

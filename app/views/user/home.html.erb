@@ -1,0 +1,41 @@
+<% content_for :title, "Home" %>
+
+<div class="row">
+
+  <div class="span8">
+    <div class="row">
+      <div id="left-col">
+        <%= render :partial => "shared/file_list", :locals => { :list => [] }%>
+      </div>
+      <div id="right-col">
+        <%= render :partial => "shared/file_list", :locals => { :list => @dropbox_file_list }%>
+      </div>
+    </div>
+  </div>
+
+  <div class="span4">
+    <div class="well sidebar-nav banners">
+      <ul class="nav nav-list">
+        <li>
+          <%= render :partial => "brands/dropbox"%>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $("#generate_tpot_button").click(function(){
+    $("#display-ajax-output").load("/listing/generate_trust_url", function(response,status){
+      if (status=="success")
+      {
+      $(this).html(response);
+      }
+    });
+  });
+});
+</script>
+
+
+

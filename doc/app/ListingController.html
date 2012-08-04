@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class ListingController - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/controllers/listing_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="ApplicationController.html">ApplicationController</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="ListingHelper.html">ListingHelper</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-click_trust_url">#click_trust_url</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-generate_trust_url">#generate_trust_url</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-post_new">#post_new</a>
+    
+    <li><a href="#method-i-view">#view</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Authentication.html">Authentication</a>
+  
+    <li><a href="./Identity.html">Identity</a>
+  
+    <li><a href="./Listing.html">Listing</a>
+  
+    <li><a href="./ListingController.html">ListingController</a>
+  
+    <li><a href="./ListingHelper.html">ListingHelper</a>
+  
+    <li><a href="./Photo.html">Photo</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserController.html">UserController</a>
+  
+    <li><a href="./UserHelper.html">UserHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ListingController</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-click_trust_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">click_trust_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This gets called if someone clicks on a tweb link on Craigslist, which was
+generated using <a
+href="ListingController.html#method-i-generate_trust_url">#generate_trust_url</a></p>
+          
+
+          
+          <div class="method-source-code" id="click_trust_url-source">
+            <pre><span class="ruby-comment"># File app/controllers/listing_controller.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">click_trust_url</span>
+  <span class="ruby-ivar">@listing</span> = <span class="ruby-constant">Listing</span>.<span class="ruby-identifier">find_by_randomized_id</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@seller</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">user_id</span>)
+  <span class="ruby-ivar">@listing_code</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>]
+  <span class="ruby-ivar">@trust_score</span> = <span class="ruby-ivar">@seller</span>.<span class="ruby-identifier">trust_score</span>
+
+  <span class="ruby-comment"># Check if the user is already logged in and update trust score if so</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">session</span>[<span class="ruby-value">:userid</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:userid</span>]) <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@buyer</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:userid</span>])
+    <span class="ruby-ivar">@trust_score</span> = <span class="ruby-ivar">@seller</span>.<span class="ruby-identifier">updated_trust_score</span>(<span class="ruby-ivar">@buyer</span>)
+    <span class="ruby-comment">#render &quot;user/fb_buyer_callback&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- click_trust_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- click_trust_url-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File app/controllers/listing_controller.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-generate_trust_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_trust_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used for generating new trust-url and handles clicks on it</p>
+          
+
+          
+          <div class="method-source-code" id="generate_trust_url-source">
+            <pre><span class="ruby-comment"># File app/controllers/listing_controller.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_trust_url</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">getCurrentUser</span>(<span class="ruby-string">&quot;generate a new trust-url&quot;</span>)
+  <span class="ruby-identifier">rand_string</span> = <span class="ruby-identifier">get_random_trust_code</span>
+  <span class="ruby-identifier">trust_url</span> = <span class="ruby-string">&quot;http://&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">hostname</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;/trust/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rand_string</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#### HERE ####&quot;</span>, <span class="ruby-identifier">root_url</span>
+  <span class="ruby-ivar">@listing</span> = <span class="ruby-constant">Listing</span>.<span class="ruby-identifier">new</span>({<span class="ruby-value">:user_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">id</span>,
+                          <span class="ruby-value">:randomized_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">rand_string</span>,
+                          <span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Temp title&quot;</span>,
+                          <span class="ruby-value">:category</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Temp category&quot;</span>,
+                          <span class="ruby-value">:body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Temp body&quot;</span>,
+                          <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;temp/url&quot;</span>,
+                          <span class="ruby-value">:embedded_trust_url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">trust_url</span>})
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">valid?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-comment">#flash[:success] = &quot;Here's your new trust_url\n&quot; + trust_url</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;listing/inline_tweb_url&quot;</span>
+  <span class="ruby-keyword">else</span> 
+    <span class="ruby-identifier">notifyFailure</span>(<span class="ruby-ivar">@listing</span>, <span class="ruby-string">&quot;generating a new trust_url&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generate_trust_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generate_trust_url-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used for creating new post</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File app/controllers/listing_controller.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">getCurrentUser</span>(<span class="ruby-string">&quot;create new listing&quot;</span>)
+  
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-post_new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">post_new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="post_new-source">
+            <pre><span class="ruby-comment"># File app/controllers/listing_controller.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">post_new</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">getCurrentUser</span>(<span class="ruby-string">&quot;create new listing&quot;</span>)
+  <span class="ruby-comment"># Saves the listing entry in the DB</span>
+  <span class="ruby-ivar">@listing</span> = <span class="ruby-constant">Listing</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:listing</span>])
+  <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">url</span> = <span class="ruby-string">&quot;/path/to/craigslist/post&quot;</span> 
+  <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">user_id</span> = <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">rand_string</span> = <span class="ruby-identifier">get_random_trust_code</span> 
+  <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">randomized_id</span> = <span class="ruby-identifier">rand_string</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">valid?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-comment">#</span>
+    <span class="ruby-comment"># Here we send HTML request to craigslist</span>
+    <span class="ruby-comment"># </span>
+    <span class="ruby-identifier">notifySuccess</span>(<span class="ruby-ivar">@listing</span>, <span class="ruby-string">&quot;created a new listing&quot;</span>)
+  <span class="ruby-keyword">else</span> 
+    <span class="ruby-identifier">notifyFailure</span>(<span class="ruby-ivar">@listing</span>, <span class="ruby-string">&quot;creating a new listing&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- post_new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- post_new-method -->
+
+    
+      <div id="method-i-view" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">view</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Search for</p>
+          
+
+          
+          <div class="method-source-code" id="view-source">
+            <pre><span class="ruby-comment"># File app/controllers/listing_controller.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">view</span>
+  <span class="ruby-ivar">@listing</span> = <span class="ruby-constant">Listing</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@listing</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:failure</span>] = <span class="ruby-string">&quot;There is no such listing&quot;</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:user</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:home</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- view-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- view-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

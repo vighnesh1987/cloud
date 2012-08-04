@@ -1,0 +1,12 @@
+<%= content_for :title => "View Listing " + params[:id]%>
+<p> Passed parameters in this request are <%= params%> </p>
+
+<table class="middle">
+<% @listing.attributes.each do |k,v|%>
+  <tr> 
+    <td> <%= k%> </td> 
+    <td> <%= v%> </td> 
+  </tr>
+<% end %>
+</table>
+

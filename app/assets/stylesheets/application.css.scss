@@ -1,0 +1,171 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+/* @dandekar - This file now uses nested CSS styling via SASS - http://sass-lang.com/tutorial.html */
+
+/* @dandekar - Override Twitter bootstrap styles in bootstrap_and_overrides.css.less */
+.hero-unit {
+  /* background-color defined here will be overriden by @heroUnitBackground in bootstrap_and_overrides.css.less */
+  /* Style this element in bootstrap_and_overrides.css.less */
+}
+
+body {
+  /* background-color, margin, font-family, etc defined here will be overridden */ 
+  /* See below and http://twitter.github.com/bootstrap/less.html for more info */
+  /* Define background-color by changing the value of @bodyBackground in bootstrap_and_overrides.css.less */
+  /* Define font-family by changing the value of @sansFontFamily, @serifFontFamily in bootstrap_and_overrides.css.less */
+  /* Define padding in boostrap_and_overrides.css.less at the top */
+}
+
+/* Custom styles */
+/* @dandekar: Define styles for custom classes, ids here. You can also define them in the files 
+ * listing.css.scss, ratings.css.scss, etc for better decompostion. All will get pulled in due to
+ * the directive "require tree" at the end of the topmost comment in this file */
+html{
+	height:100%
+}
+
+.profile-pic img {
+  margin: {
+    left:15px;
+    top:15px;
+    right:25px;
+  }
+	padding:3px;
+	border: {
+    style:solid;
+    color: #dddddd #aaaaaa #aaaaaa #dddddd;
+    width: 1px 2px 2px 1px;
+  }
+	background-color:#eeeeee;
+	float:left;
+	text-align:center;
+}
+
+.url {
+  width:80%; 
+  border: {
+    style:dashed;
+    width:1px;
+  }
+  padding:7px 7px 7px 7px;
+  font: {
+    family: Courier, New Courier;
+    size:15px;
+  }
+  text-align:center;
+	margin:15px auto;
+  background-color:#F8F8F8;
+}
+
+a.disabled_url {
+  &:hover {
+    text-decoration:none;
+  }
+  text-decoration:none;
+  color: black;
+}
+
+.content-card {
+	margin-top:40px;
+  padding: {
+    left:20px;
+    right:20px;
+  }
+}
+
+li.welcome-card-instructions {
+line-height:23px;
+}
+
+instructions {
+color:#888888;
+font-size:15px;
+}
+
+.fb-connect {
+  margin:auto;
+  text-align:center;
+  position:relative;
+  & a {
+    margin:auto;
+  }
+  & #fb-connect-button {
+    margin:auto;
+    position:absolute;
+  }
+  & #fb-connect-button-glow {
+    margin:auto;
+    position:absolute;
+  }
+}
+
+
+/******** CSS Style for stars - Uses SASS ************/
+.rating {
+    float:left;
+    &:not(:checked) {
+      /* SASS Note: & is replaced verbatim by the parent*/
+      /* :not(:checked) is a filter, so that browsers that don’t support :checked don’t 
+         follow these rules. Every browser that supports :checked also supports :not(), so
+         it doesn’t make the test unnecessarily selective */
+
+        & > input {
+          position:absolute;
+          top:-9999px;
+          clip:rect(0,0,0,0);
+        }
+        & > label {
+            float:right;
+            width:1em;
+            padding:0 .1em;
+            overflow:hidden;
+            white-space:nowrap;
+            cursor:pointer;
+            line-height:1.2;
+            color:#ddd;
+            &:before {
+                content: '★ ';
+            }
+
+        }
+        & > label:hover,
+        & > label:hover ~ label {
+            color: gold;
+        }
+    }
+
+    & > input:checked {
+        & ~ label {
+          color: #f70;
+        }
+        & + label:hover,
+        & + label:hover ~ label,
+        & ~ label:hover,
+        & ~ label:hover ~ label {
+            color: #ea0;
+        }
+    }
+
+    & > label:hover ~ input:checked ~ label {
+        color: #ea0;
+    }
+
+    & > label:active {
+        position:relative;
+        top:2px;
+        left:2px;
+    }
+}
+

@@ -1,0 +1,33 @@
+<%# Partial for displaying FB connect button. Clicks to user/login?provider=facebook. extra_args need to be passed in.%>
+<div class="fb-connect">
+  <%url_hash = {:controller => :user, :action => :login, :provider => "facebook"}%>
+  <%url_hash.merge!(extra_args)%>
+  <%= link_to url_hash do %>
+    <%= image_tag("fb_connect_glow.png", :border => 0, :id => "fb-connect-button-glow") %>
+    <%= image_tag("fb_connect.png", :border => 0, :id => "fb-connect-button") %>
+  <% end %>
+</div>
+
+
+<%# javascript_tag doesn't work here, possibly due to unobtrusive nature? %>
+<script type="text/javascript">
+  $(document).ready(
+    function() {
+      /* Hide and show are essential. Without them, the div gets misplaced [shifts to right] for some reason - and 
+       * gets back into place when you open the console and try to inspect the element */
+      $("div.fb-connect").hide();
+      $("div.fb-connect").hover(
+        function(event) {
+          $("#fb-connect-button").css("z-index", "0");
+          $("#fb-connect-button-glow").css("z-index", "1");
+        },
+        function(event) {
+          $("#fb-connect-button").css("z-index", "0");
+          $("#fb-connect-button-glow").css("z-index", "-1");
+        }
+      );
+      $("div.fb-connect").show("fast");
+    }
+  );
+</script>
+

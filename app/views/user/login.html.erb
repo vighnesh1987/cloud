@@ -1,0 +1,53 @@
+<%content_for :title, "Cloudgator"%>
+
+<div class="row">
+	<div class="span10 offset1">
+		<div class="content-card">
+			<div class="hero-unit">
+				<div class="page-header">
+					<h1>Cloudgator</h1>
+  				<!-- <img src="./images/how_it_works.png"></h1>-->
+          <br />
+					<p>
+          A cloud storage aggregator!
+          </p>
+				</div>
+  			<!-- FB Connect logic -->
+  			<%extra_args =  {:role => "seller"}%>
+  			<%= render :partial => "shared/fb_connect_button", :locals => {:extra_args => extra_args}%>
+				<br />
+				<br />
+  			<br />
+  			<br />
+  			<instructions>
+    		<b>How it works:</b>
+    			<ol class="welcome-card-instructions">
+            <li class="welcome-card-instructions"> Sign in via Facebook Connect
+            <li class="welcome-card-instructions"> Link your cloud storage accounts
+      			<li class="welcome-card-instructions"> Search, retrieve and upload to all your storage accounts using Cloudgator!
+    			</ol>
+  			</instructions>
+				<%#<button class="btn btn-info">Learn more</button> %>
+			</div>
+		</div>
+	</div>
+</div>
+<!--
+<table class="middle">
+  <tr>
+    <td><%= label_tag(:uname, "Username:") %> </td>
+    <td><%= text_field_tag(:uname) %> </td>
+  </tr>
+  <tr>
+    <td><%= label_tag(:pwd, "Password:") %> </td>
+    <td><%= password_field_tag(:pwd) %> </td>
+  </tr>
+  <tr>
+    <td><%= submit_tag("Login") %> </td>
+  </tr>
+</table>
+<%#= render :partial => "shared/fb_login"%>
+<%#= link_to("Login with Facebook", @fb_login_redir_url)%>
+-->
+
+

@@ -1,0 +1,31 @@
+<% content_for :title, "Rating" %>
+
+<div class="row">
+  <div class="span8 offset1">
+    <div class="content-card">
+
+      <p>
+        <b>Listing:</b>
+        <%= @rating.listing_id %>
+      </p>
+
+      <p>
+        <b>Stars:</b>
+        <%= @rating.stars %>
+      </p>
+
+      <p>
+        <b>Rater:</b>
+        <%= @rating.rater_id %>
+      </p>
+
+      <p>
+        <b>Rater comment:</b>
+        <%= @rating.rater_comment %>
+      </p>
+
+      <%#= link_to 'Edit', edit_rating_path(@rating) %>
+      <%#= link_to 'Back', ratings_path %>
+    </div>
+  </div>
+</div>

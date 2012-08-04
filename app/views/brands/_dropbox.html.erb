@@ -1,0 +1,21 @@
+<div id="banner-dropbox">
+  <a href="/dropbox/authorize">
+    <img src="<%= DropboxController.get_logo%>" alt="Dropbox logo" class="banner" id="dropbox-banner"/>
+  </a>
+</div>
+<div id="dropbox-display">
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#dropbox-banner").hover(
+        function() {
+          $(this).css("background-color", "black");
+        },
+        function() {
+          $(this).css("background-color", "#2E2E2E");
+        }
+        );
+      });
+</script>
+

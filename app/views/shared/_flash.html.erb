@@ -1,0 +1,58 @@
+<% if !messages.empty? %>
+<div id='alert-messages'>
+  <br />
+  <br />
+  <br />
+  <div class="span4 offset4">
+    <% if messages[:failure] %>
+
+      <% allmsg = messages[:failure] %>
+
+      <div class="alert alert-error">
+        <button class="close" data-dismiss="alert">×</button>
+        <table> <!-- class="notify middle center failure"> -->
+        <% if allmsg.kind_of?(Array) %>
+          <% allmsg.each do |msg| %>
+            <tr><td><%= msg %></td></tr> 
+          <% end %>
+        <% else %>
+          <tr><td><%= allmsg %></td></tr>
+        <% end %>
+        </table>
+      </div>
+
+    <% else if messages[:success] %>
+
+      <% allmsg = messages[:success] %>
+
+        <div class="alert alert-success">
+          <button class="close" data-dismiss="alert">×</button>
+          <table> <!-- class="notify middle center success">-->
+          <% if allmsg.kind_of?(Array) %>
+            <% allmsg.each do |msg| %>
+              <tr><td><%= msg %></td></tr> 
+            <% end %>
+          <% else %>
+            <tr><td><%= allmsg %></td></tr>
+          <% end %>
+          </table>
+        </div>
+    <% end %>
+
+    <% end %>
+  </div>
+  <br />
+</div>
+
+<%= javascript_tag do %>
+  window.setTimeout(function() {
+      $("#alert-messages").fadeTo(500, 0).slideUp(500, function(){
+          $(this).remove(); 
+      });
+  }, 3000);
+<% end %>
+
+<% end %>
+
+
+

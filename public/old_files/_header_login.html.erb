@@ -1,0 +1,16 @@
+<%uid = session[:userid]%>
+<table class="middle hpad"><tr>
+	<% if uid.nil? %>
+    <td><%#= link_to "Login", :controller => :user, :action =>:login %></td>
+    <td><%#= link_to "Login with Facebook", :controller => :user, :action => :login, :provider => "facebook", :role => "seller"%></td>
+    <td><%#= link_to "Register", :controller => :user, :action => :register %></td>
+	<% else %>
+    <td><%= "Hi " + User.find(uid).first_name + "! "%></td>
+    <td> <%= link_to "Home" ,"/user/home"%> </td> 
+    <td><%= link_to "Logout", "/user/logout" %></td>
+    <td> 
+      <%#= link_to "New Listing", url_for(:controller => :listing, :action => :new) %>
+    </td>
+	<%end%>
+</tr></table>
+

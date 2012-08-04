@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= yield :title %></title>
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures that devices display responsive pages properly -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- ZeroClipboard for copying with a click -->
+    <%= javascript_include_tag "ZeroClipboard"%>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %> <!-- Sandwiched between bootstrap and bootstrap-responsive - recommended -->
+		<%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+
+    <!-- Fav and touch icons -->
+    <%= favicon_link_tag %>
+    <%= favicon_link_tag '/apple-touch-icon.png', :rel => 'apple-touch-icon', :type => 'image/png' %>
+    <%= favicon_link_tag '/apple-touch-icon.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+    <%= favicon_link_tag '/apple-touch-startup-image.png', :rel => 'apple-touch-startup-image', :type => 'image/png' %>
+	</head>
+	<body>
+    <!-- Render header -->
+    <%= render :partial => "layouts/site_header" %>
+
+    <!-- Yield view body -->
+    <div class="container">
+			<div class="center-panel">
+      <!-- Render flash notices -->
+      <%= render :partial => "shared/flash", :locals => {:messages => flash} %>
+      <%= yield %>
+    	</div>
+		</div>
+
+    <!-- Render footer -->
+    <%#= render :partial => "layouts/site_footer" %>
+	</body>
+</html>
+

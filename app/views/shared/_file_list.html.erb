@@ -1,0 +1,14 @@
+<% puts list %>
+<div class="span4 root-dir">
+<ul class="nav nav-tabs nav-stacked">
+  <% list.each do |l|%>
+    <li>
+      <% if l[:is_dir] then%>
+        <%= render :partial => 'shared/display_dir', :locals => {:dir => l}%>
+      <%else%>
+        <%= render :partial => 'shared/display_file', :locals => {:file => l}%>
+      <%end%>
+    </li>
+  <% end %>
+</ul>
+</div>

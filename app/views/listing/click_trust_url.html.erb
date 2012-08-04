@@ -1,0 +1,56 @@
+<% content_for :title, "Trust value for seller" %>
+
+<div class="row">
+	<div class="span10 offset1">
+    <div class="content-card">
+    <!-- Check if buyer has logged in -->
+    <% if @buyer.nil? then%>
+      <p> 
+        The trust score of the seller is <%= @trust_score%>. 
+        Facebook Connect with tpot to see an updated trust score that takes your social network into account 
+      </p>
+      <!--FB Connect logic -->
+      <%extra_args = {:role => "buyer", :code => @listing_code}%>
+      <%= render :partial => "shared/fb_connect_button", :locals => {:extra_args => extra_args}%>
+    <%else%>
+      <!-- Display trust score only if buyer hasn't rated the transaction already -->
+      <% if @allow_to_rate then%>
+        <p>
+          The trust score is <%= @trust_score%> for transaction code <%= @listing.randomized_id%>
+        </p>
+        <% question = "Did you complete this transaction?" %>
+        <% url_to_be_loaded = "/ratings/new/#{@listing.randomized_id}" %>
+        <span id="display-ajax-output"> 
+          <button id="fetch_ratings_form" class="btn btn-primary"> <%= question %></button>
+        </span>
+      <% else %>
+        <!-- Buyer has already rated the transaction -->
+        <p>
+          Looks like you've already rated this transaction!
+        </p>
+        <%#
+          TODO: Presently we do not allow updates to the rating. Need to fix the rendering of
+          this view from UserController before we allow it, otherwise we'll need to repeat a lot of
+          code
+         %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<%= javascript_tag do %>
+$(document).ready(function(){
+  $("#fetch_ratings_form").click(function(){
+    $("#display-ajax-output").load("<%= url_to_be_loaded %>", function(response,status){
+      if (status=="success")
+      {
+      $(this).hide("slow");
+      $(this).html(response);
+      $(this).show("slow");
+      }
+    });
+  });
+});
+<% end %>
+

@@ -1,0 +1,22 @@
+<%# Needs dir object with name, path%>
+<% id = dir[:name].to_s %>
+<% iconid = ("icon_" + id.to_s).gsub(/\s+/, "") %>
+<a class='dir' id='<%= id%>' data-path='<%= dir[:path]%>' href='#'>
+  <p>
+  <i class='icon-folder-close' id='<%= iconid %>'></i> <%= dir[:name]%>
+  </p>
+</a>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      $('#<%= id%>').click(function(evt) {
+          $('#<%= iconid%>').toggleClass('icon-folder-close icon-folder-open');
+          $(this).css("background-color", "#81F7F3");
+          $.get('/dropbox/get_meta?path=<%=u dir[:path]%>', function(data) {
+            $("#left-col").html($("#right-col").html());
+            $("#right-col").html(data);
+            });
+        });
+      });
+</script>
+

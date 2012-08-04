@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>module ListingHelper - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/helpers/listing_helper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="ApplicationHelper.html">ApplicationHelper</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-getCurrentUser">#getCurrentUser</a>
+    
+    <li><a href="#method-i-get_random_trust_code">#get_random_trust_code</a>
+    
+    <li><a href="#method-i-notifyFailure">#notifyFailure</a>
+    
+    <li><a href="#method-i-notifySuccess">#notifySuccess</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Authentication.html">Authentication</a>
+  
+    <li><a href="./Identity.html">Identity</a>
+  
+    <li><a href="./Listing.html">Listing</a>
+  
+    <li><a href="./ListingController.html">ListingController</a>
+  
+    <li><a href="./ListingHelper.html">ListingHelper</a>
+  
+    <li><a href="./Photo.html">Photo</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UserController.html">UserController</a>
+  
+    <li><a href="./UserHelper.html">UserHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ListingHelper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-getCurrentUser" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCurrentUser</span><span
+            class="method-args">(actionmsg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>HELPERS #######</p>
+          
+
+          
+          <div class="method-source-code" id="getCurrentUser-source">
+            <pre><span class="ruby-comment"># File app/helpers/listing_helper.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">getCurrentUser</span>(<span class="ruby-identifier">actionmsg</span>)
+  <span class="ruby-comment"># Checks if a user is logged in, redirects to login page, if not true</span>
+  <span class="ruby-comment"># returns user object if true</span>
+  <span class="ruby-comment"># actionmsg is appended to the flash error string</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:userid</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:failure</span>] = <span class="ruby-string">&quot;You need to be logged in to &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">actionmsg</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:user</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:login</span> 
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:userid</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">user</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- getCurrentUser-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getCurrentUser-method -->
+
+    
+      <div id="method-i-get_random_trust_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_random_trust_code</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_random_trust_code-source">
+            <pre><span class="ruby-comment"># File app/helpers/listing_helper.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_random_trust_code</span>
+  <span class="ruby-constant">SecureRandom</span>.<span class="ruby-identifier">urlsafe_base64</span>(<span class="ruby-value">10</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_random_trust_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_random_trust_code-method -->
+
+    
+      <div id="method-i-notifyFailure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">notifyFailure</span><span
+            class="method-args">(obj, actionmsg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="notifyFailure-source">
+            <pre><span class="ruby-comment"># File app/helpers/listing_helper.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">notifyFailure</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">actionmsg</span>)
+    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:failure</span>] = [<span class="ruby-string">&quot;Unsuccessful at &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">actionmsg</span>] 
+    <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">full_messages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">msg</span><span class="ruby-operator">|</span> 
+      <span class="ruby-identifier">flash</span>[<span class="ruby-value">:failure</span>] <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">msg</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.&quot;</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:back</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- notifyFailure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- notifyFailure-method -->
+
+    
+      <div id="method-i-notifySuccess" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">notifySuccess</span><span
+            class="method-args">(obj, actionmsg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="notifySuccess-source">
+            <pre><span class="ruby-comment"># File app/helpers/listing_helper.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">notifySuccess</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">actionmsg</span>)
+  <span class="ruby-identifier">flash</span>[<span class="ruby-value">:success</span>] = <span class="ruby-string">&quot;You successfully &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">actionmsg</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:view</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- notifySuccess-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- notifySuccess-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,20 @@
+<!--
+Used by the RatingsController to respond to an AJAX create rating request
+when a potential buyer rates a completed transaction
+locals: rating
+-->
+
+<p>
+<span class="label label-success">Success</span>
+Thank you for rating this transcation!
+You rated listing #<%= rating.listing.randomized_id%> as <%= rating.stars%> stars with the following comment:
+</p>
+<p class="well">
+<%= rating.rater_comment %>
+</p>
+
+<p>
+This will affect the trust score of the seller.
+</p>
+
+

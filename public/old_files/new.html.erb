@@ -1,0 +1,21 @@
+<p>Now creating new listing for <%= @user.full_name%></p>
+
+<%= form_for(:listing, :url => {:action => :post_new}) do |f| %>
+<table class="middle">
+    <tr>
+      <td> <%= f.label :title, "Title : " %> </td>
+      <td> <%= f.text_field :title %> </td> 
+    </tr>
+    <tr>
+      <td> <%= f.label :category, "Category : " %> </td>
+      <td> <%= f.text_field :category %> </td> 
+    </tr>
+    <tr>
+      <td> <%= f.label :body, "Body : " %> </td>
+      <td> <%= f.text_area :body %> </td> 
+    </tr>
+    <tr>
+      <td> <%= f.submit("Submit!") %> </td>
+    </tr>
+<% end%>
+

@@ -1,0 +1,741 @@
+2012-07-27 12:42:22.763+0000: WARNING! Deprecated configuration options used. See manual for details
+2012-07-27 12:42:22.763+0000: enable_online_backup has been replaced with online_backup_enabled and online_backup_port
+2012-07-27 12:42:22.846+0000: Creating new db @ /Users/Rege/Sites/tweb/db/neo4j-development/neostore
+2012-07-27 12:42:22.980+0000: Opened [/Users/Rege/Sites/tweb/db/neo4j-development/nioneo_logical.log.1] clean empty log, version=0, lastTxId=1
+2012-07-27 12:42:22.990+0000: TM new log: tm_tx_log.1
+2012-07-27 12:42:23.041+0000: Opened [/Users/Rege/Sites/tweb/db/neo4j-development/index/lucene.log.1] clean empty log, version=0, lastTxId=1
+2012-07-27 12:42:23.046+0000: --- STARTUP diagnostics START ---
+2012-07-27 12:42:23.048+0000: Neo4j Kernel properties:
+    read_only=false
+    neo4j.ext.udc.host=udc.neo4j.org
+    logical_log=/Users/Rege/Sites/tweb/db/neo4j-development/nioneo_logical.log
+    min_node_cache_size=0
+    intercept_committing_transactions=false
+    node_auto_indexing=false
+    remote_shell_name=shell
+    cache_type=soft
+    intercept_deserialized_transactions=false
+    ha.db=NO
+    use_adaptive_cache=YES
+    lucene_searcher_cache_size=2147483647
+    neo4j.ext.udc.interval=86400000
+    use_memory_mapped_buffers=true
+    ha.coordinators=localhost:2181,localhost:2182,localhost:2183
+    timestamps=YES
+    rebuild_idgenerators_fast=true
+    neostore.propertystore.db.index.keys.mapped_memory=1M
+    max_node_cache_size=1500
+    neostore.propertystore.db.strings.mapped_memory=130M
+    neostore.propertystore.db.arrays.mapped_memory=130M
+    gcr_cache_min_log_interval=60s
+    relationship_grab_size=100
+    relationship_auto_indexing=false
+    remote_shell_read_only=false
+    lucene_writer_cache_size=2147483647
+    storage_path=/Users/Rege/Sites/tweb/db/neo4j-development
+    node_cache_array_fraction=1.0
+    allow_store_upgrade=false
+    execution_guard_enabled=false
+    relationship_cache_array_fraction=1.0
+    migration_thread=NO
+    remote_logging_host=127.0.0.1
+    store_dir=/Users/Rege/Sites/tweb/db/neo4j-development
+    remote_logging_port=4560
+    enable_rules=YES
+    gc_monitor_threshold=200ms
+    load_kernel_extensions=true
+    array_block_size=120
+    neostore.relationshipstore.db.mapped_memory=50M
+    dump_configuration=false
+    gc_monitor_wait_time=100ms
+    neostore.nodestore.db.mapped_memory=25M
+    neo4j.ext.udc.first_delay=600000
+    remote_shell_enabled=true
+    min_relationship_cache_size=0
+    max_relationship_cache_size=3500
+    neo4j.ext.udc.reg=unreg
+    remote_shell_port=9332
+    adaptive_cache_heap_ratio=0.77
+    identity_map=YES
+    adaptive_cache_manager_decrease_ratio=1.15
+    ha.server_id=2
+    neo_store=/Users/Rege/Sites/tweb/db/neo4j-development/neostore
+    adaptive_cache_worker_sleep_time=3000
+    neostore.propertystore.db.index.mapped_memory=1M
+    adaptive_cache_manager_increase_ratio=1.1
+    backup_slave=false
+    neostore.propertystore.db.mapped_memory=90M
+    string_block_size=120
+    grab_file_lock=true
+    remote_logging_enabled=false
+    ha.server=localhost:6002
+    neo4j.ext.udc.enabled=true
+2012-07-27 12:42:23.057+0000: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+2012-07-27 12:42:23.059+0000: System memory information:
+    Total Physical memory: 4.00 GB
+    Free Physical memory: 162.15 MB
+    Committed virtual memory: 3.19 GB
+    Total swap space: 4.00 GB
+    Free swap space: 893.12 MB
+2012-07-27 12:42:23.068+0000: JVM memory information:
+    Free  memory: 18.43 MB
+    Total memory: 81.06 MB
+    Max   memory: 493.75 MB
+    Garbage Collector: ParNew: [Par Eden Space, Par Survivor Space]
+    Garbage Collector: ConcurrentMarkSweep: [Par Eden Space, Par Survivor Space, CMS Old Gen, CMS Perm Gen]
+    Memory Pool: Code Cache (Non-heap memory): committed=3.82 MB, used=3.75 MB, max=48.00 MB, threshold=0.00 B
+    Memory Pool: Par Eden Space (Heap memory): committed=16.63 MB, used=12.07 MB, max=50.00 MB, threshold=?
+    Memory Pool: Par Survivor Space (Heap memory): committed=2.06 MB, used=856.76 kB, max=6.25 MB, threshold=?
+    Memory Pool: CMS Old Gen (Heap memory): committed=62.38 MB, used=49.73 MB, max=437.50 MB, threshold=0.00 B
+    Memory Pool: CMS Perm Gen (Non-heap memory): committed=53.13 MB, used=38.70 MB, max=82.00 MB, threshold=0.00 B
+2012-07-27 12:42:23.075+0000: Operating system information:
+    Operating System: Mac OS X; version: 10.7.4; arch: x86_64; cpus: 4
+    Max number of file descriptors: 10240
+    Number of open file descriptors: 150
+    Process id: 17821@gotham-city
+    Byte order: LITTLE_ENDIAN
+2012-07-27 12:42:23.079+0000: JVM information:
+    VM Name: Java HotSpot(TM) 64-Bit Server VM
+    VM Vendor: Apple Inc.
+    VM Version: 20.8-b03-424
+    JIT compiler: HotSpot 64-Bit Tiered Compilers
+    VM Arguments: [-Djdk.home=, -Djruby.home=/Users/Rege/.rvm/rubies/jruby-1.6.7, -Djruby.script=jruby, -Djruby.shell=/bin/sh, -Djffi.boot.library.path=/Users/Rege/.rvm/rubies/jruby-1.6.7/lib/native/Darwin, -Xmx500m, -Xss2048k, -Djruby.memory.max=500m, -Djruby.stack.max=2048k, -Xbootclasspath/a:/Users/Rege/.rvm/rubies/jruby-1.6.7/lib/jruby.jar, -Dfile.encoding=UTF-8]
+2012-07-27 12:42:23.080+0000: Java classpath:
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar
+     [loader.3] file:/System/Library/Java/Extensions/dns_sd.jar
+     [bootstrap] /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaRuntimeSupport.framework/Versions/A/Resources/Java/JavaRuntimeSupport.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/geronimo-jta_1.1_spec-1.1.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/server-api-1.7.1.jar
+     [classpath + loader.2] file:/Users/Rege/Sites/tweb/
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-graph-algo-1.7.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/MRJToolkit.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-beanutils-core-1.8.0.jar
+     [loader.3] file:/System/Library/Java/Extensions/vecmath.jar
+     [loader.3] file:/System/Library/Java/Extensions/libmlib_jai.jnilib
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/servlet-api-2.5-20081211.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-graph-matching-1.7.1.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/dnsns.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-collections-3.2.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/neo4j-server-1.7-static-web.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/lucene-core-3.5.0.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-util-3.2.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar
+     [loader.3] file:/System/Library/Java/Extensions/libJ3D.jnilib
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jansi-1.5.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/json-1.7.3-java/lib/json/ext/generator.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jackson-mapper-asl-1.8.3.jar
+     [loader.3] file:/System/Library/Java/Extensions/mlibwrapper_jai.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/localedata.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-3.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/QTJava.zip
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/ruby-debug-base-0.10.4-java/lib/ruby_debug.jar
+     [bootstrap] /Users/Rege/.rvm/rubies/jruby-1.6.7/lib/jruby.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/rrd4j-2.0.7.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/blueprints-core-1.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-configuration-1.6.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jersey-server-1.9.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jettison-1.3.jar
+     [loader.3] file:/System/Library/Java/Extensions/libJ3DAudio.jnilib
+     [loader.3] file:/System/Library/Java/Extensions/libAppleScriptEngine.jnilib
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/gremlin-java-1.5.jar
+     [loader.3] file:/System/Library/Java/Extensions/j3daudio.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-lucene-index-1.7.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/libJ3DUtils.jnilib
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jsr311-api-1.1.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jackson-core-asl-1.8.3.jar
+     [loader.3] file:/System/Library/Java/Extensions/libQTJNative.jnilib
+     [loader.3] file:/System/Library/Java/Extensions/j3dcore.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jetty-6.1.25.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-analysis-3.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jackson-jaxrs-1.8.3.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/groovy-1.8.5.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-udc-1.7.1.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar
+     [loader.3] file:/System/Library/Java/Extensions/j3dutils.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/pipes-1.0.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/mimepull-1.6.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-shell-1.7.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/jai_core.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/slf4j-jdk14-1.6.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/jai_codec.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-kernel-1.7.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-digester-1.8.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jcl-over-slf4j-1.6.1.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/sunjce_provider.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jersey-core-1.9.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/org.apache.servicemix.bundles.jline-0.9.94_1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/bcprov-jdk16-140.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jetty-util-6.1.25.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/scala-library-2.9.0-1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/blueprints-neo4j-graph-1.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-io-1.4.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/gremlin-groovy-1.5.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/neo4j-server-1.7.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-lang-2.4.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-jmx-1.7.1.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/jce.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/log4j-over-slf4j-1.6.1.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-commons-3.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/stax-api-1.0.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-tree-3.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/jdbc-postgres-9.1.901/lib/postgresql-9.1-901.jdbc4.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/antlr-2.7.7.jar
+     [loader.3] file:/System/Library/Java/Extensions/AppleScriptEngine.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-beanutils-1.8.0.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/apple_provider.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/activerecord-jdbc-adapter-1.2.2/lib/arjdbc/jdbc/adapter_java.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/slf4j-api-1.6.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/json-1.7.3-java/lib/json/ext/parser.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-cypher-1.7.1.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/sunpkcs11.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jersey-multipart-1.9.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-logging-1.1.1.jar
+2012-07-27 12:42:23.084+0000: Library path:
+    /Users/Rege/Sites/tweb
+    /Library/Java/Extensions
+    /System/Library/Java/Extensions
+    /usr/lib/java
+2012-07-27 12:42:23.084+0000: System.properties:
+    jruby.home = /Users/Rege/.rvm/rubies/jruby-1.6.7
+    sun.boot.library.path = /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries
+    awt.nativeDoubleBuffering = true
+    gopherProxySet = false
+    mrj.build = 11M3720
+    path.separator = :
+    file.encoding.pkg = sun.io
+    sun.java.launcher = SUN_STANDARD
+    user.country = US
+    sun.os.patch.level = unknown
+    user.dir = /Users/Rege/Sites/tweb
+    jdk.home = 
+    sun.jnu.encoding = MacRoman
+    jruby.memory.max = 500m
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+    jffi.boot.library.path = /Users/Rege/.rvm/rubies/jruby-1.6.7/lib/native/Darwin
+    user.home = /Users/Rege
+    user.timezone = America/Los_Angeles
+    file.encoding = UTF-8
+    jruby.stack.max = 2048k
+    jruby.script = jruby
+    user.name = Rege
+    jruby.shell = /bin/sh
+    sun.java.command = org/jruby/Main --1.9 /Users/Rege/.rvm/gems/jruby-1.6.7/bin/ruby_noexec_wrapper /Users/Rege/.rvm/gems/jruby-1.6.7/bin/rails server
+    sun.arch.data.model = 64
+    user.language = en
+    awt.toolkit = apple.awt.CToolkit
+    file.separator = /
+    sun.io.unicode.encoding = UnicodeLittle
+    sun.cpu.endian = little
+    mrj.version = 1070.1.6.0_33-424
+    socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+    ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+    sun.cpu.isalist = 
+2012-07-27 12:42:23.084+0000: --- STARTUP diagnostics END ---
+2012-07-27 12:42:23.151+0000: Extension org.neo4j.kernel.KernelExtension[kernel jmx] loaded ok
+2012-07-27 12:42:23.275+0000: Extension org.neo4j.kernel.KernelExtension[shell] loaded ok
+2012-07-27 12:42:23.280+0000: Extension org.neo4j.kernel.KernelExtension[kernel udc] loaded ok
+2012-07-27 12:42:23.284+0000: --- STARTUP diagnostics for KernelDiagnostics:Versions START ---
+2012-07-27 12:42:23.284+0000: Graph Database: org.neo4j.kernel.EmbeddedGraphDatabase StoreId[time:1343392942846, id:7622070116488899193, store version: 13561656364791302]
+2012-07-27 12:42:23.284+0000: Kernel version: Neo4j - Graph Database Kernel 1.7.1
+2012-07-27 12:42:23.284+0000: Neo4j component versions:
+2012-07-27 12:42:23.284+0000:   Neo4j - Graph Database Kernel 1.7.1
+2012-07-27 12:42:23.284+0000: --- STARTUP diagnostics for KernelDiagnostics:Versions END ---
+2012-07-27 12:42:23.288+0000: --- STARTUP diagnostics for NEO_STORE_VERSIONS START ---
+2012-07-27 12:42:23.288+0000: Store versions:
+    Store versions:
+      NeoStore v0.A.0
+      NodeStore v0.A.0
+      RelationshipStore v0.A.0
+      RelationshipTypeStore v0.A.0
+      PropertyStore v0.A.0
+      PropertyIndexStore v0.A.0
+      StringPropertyStore v0.A.0
+      ArrayPropertyStore v0.A.0
+2012-07-27 12:42:23.288+0000: --- STARTUP diagnostics for NEO_STORE_VERSIONS END ---
+2012-07-27 12:42:23.289+0000: --- STARTUP diagnostics for NEO_STORE_ID_USAGE START ---
+2012-07-27 12:42:23.289+0000: Id usage:
+    Id usage:
+      NodeStore: used=1 high=0
+      RelationshipStore: used=0 high=-1
+      RelationshipTypeStore: used=0 high=-1
+      PropertyStore: used=0 high=-1
+      PropertyIndexStore: used=0 high=-1
+      StringPropertyStore: used=1 high=0
+      ArrayPropertyStore: used=1 high=0
+2012-07-27 12:42:23.289+0000: --- STARTUP diagnostics for NEO_STORE_ID_USAGE END ---
+2012-07-27 12:42:23.289+0000: --- STARTUP diagnostics for KernelDiagnostics:StoreFiles START ---
+2012-07-27 12:42:23.289+0000: Storage files:
+    active_tx_log: 11.00 B
+    index:
+      lucene-store.db: 40.00 B
+      lucene.log.1: 16.00 B
+      lucene.log.active: 4.00 B
+    - Total: 60.00 B
+    lock: 0.00 B
+    messages.log: 18.76 kB
+    neostore: 54.00 B
+    neostore.id: 9.00 B
+    neostore.nodestore.db: 9.00 B
+    neostore.nodestore.db.id: 9.00 B
+    neostore.propertystore.db: 0.00 B
+    neostore.propertystore.db.arrays: 128.00 B
+    neostore.propertystore.db.arrays.id: 9.00 B
+    neostore.propertystore.db.id: 9.00 B
+    neostore.propertystore.db.index: 0.00 B
+    neostore.propertystore.db.index.id: 9.00 B
+    neostore.propertystore.db.index.keys: 38.00 B
+    neostore.propertystore.db.index.keys.id: 9.00 B
+    neostore.propertystore.db.strings: 128.00 B
+    neostore.propertystore.db.strings.id: 9.00 B
+    neostore.relationshipstore.db: 0.00 B
+    neostore.relationshipstore.db.id: 9.00 B
+    neostore.relationshiptypestore.db: 0.00 B
+    neostore.relationshiptypestore.db.id: 9.00 B
+    neostore.relationshiptypestore.db.names: 38.00 B
+    neostore.relationshiptypestore.db.names.id: 9.00 B
+    nioneo_logical.log.1: 16.00 B
+    nioneo_logical.log.active: 4.00 B
+    tm_tx_log.1: 0.00 B
+2012-07-27 12:43:12.440+0000: WARNING! Deprecated configuration options used. See manual for details
+2012-07-27 12:43:12.440+0000: enable_online_backup has been replaced with online_backup_enabled and online_backup_port
+2012-07-27 12:43:12.610+0000: --- STARTUP diagnostics START ---
+2012-07-27 12:43:12.611+0000: Neo4j Kernel properties:
+    read_only=true
+    neo4j.ext.udc.host=udc.neo4j.org
+    logical_log=/Users/Rege/Sites/tweb/db/neo4j-development/nioneo_logical.log
+    min_node_cache_size=0
+    intercept_committing_transactions=false
+    node_auto_indexing=false
+    remote_shell_name=shell
+    cache_type=soft
+    intercept_deserialized_transactions=false
+    ha.db=NO
+    use_adaptive_cache=YES
+    lucene_searcher_cache_size=2147483647
+    neo4j.ext.udc.interval=86400000
+    use_memory_mapped_buffers=true
+    ha.coordinators=localhost:2181,localhost:2182,localhost:2183
+    timestamps=YES
+    rebuild_idgenerators_fast=true
+    neostore.propertystore.db.index.keys.mapped_memory=1M
+    max_node_cache_size=1500
+    neostore.propertystore.db.strings.mapped_memory=130M
+    neostore.propertystore.db.arrays.mapped_memory=130M
+    gcr_cache_min_log_interval=60s
+    relationship_grab_size=100
+    relationship_auto_indexing=false
+    remote_shell_read_only=false
+    lucene_writer_cache_size=2147483647
+    storage_path=/Users/Rege/Sites/tweb/db/neo4j-development
+    node_cache_array_fraction=1.0
+    allow_store_upgrade=false
+    execution_guard_enabled=false
+    relationship_cache_array_fraction=1.0
+    migration_thread=NO
+    remote_logging_host=127.0.0.1
+    store_dir=/Users/Rege/Sites/tweb/db/neo4j-development
+    remote_logging_port=4560
+    enable_rules=YES
+    gc_monitor_threshold=200ms
+    load_kernel_extensions=true
+    array_block_size=120
+    neostore.relationshipstore.db.mapped_memory=50M
+    dump_configuration=false
+    gc_monitor_wait_time=100ms
+    neostore.nodestore.db.mapped_memory=25M
+    neo4j.ext.udc.first_delay=600000
+    remote_shell_enabled=true
+    min_relationship_cache_size=0
+    max_relationship_cache_size=3500
+    neo4j.ext.udc.reg=unreg
+    remote_shell_port=9332
+    adaptive_cache_heap_ratio=0.77
+    identity_map=YES
+    adaptive_cache_manager_decrease_ratio=1.15
+    ha.server_id=2
+    neo_store=/Users/Rege/Sites/tweb/db/neo4j-development/neostore
+    adaptive_cache_worker_sleep_time=3000
+    neostore.propertystore.db.index.mapped_memory=1M
+    adaptive_cache_manager_increase_ratio=1.1
+    backup_slave=false
+    neostore.propertystore.db.mapped_memory=90M
+    string_block_size=120
+    grab_file_lock=true
+    remote_logging_enabled=false
+    ha.server=localhost:6002
+    neo4j.ext.udc.enabled=true
+2012-07-27 12:43:12.617+0000: Diagnostics providers:
+    org.neo4j.kernel.configuration.Config
+    org.neo4j.kernel.info.DiagnosticsManager
+    SYSTEM_MEMORY
+    JAVA_MEMORY
+    OPERATING_SYSTEM
+    JAVA_VIRTUAL_MACHINE
+    CLASSPATH
+    LIBRARY_PATH
+    SYSTEM_PROPERTIES
+2012-07-27 12:43:12.617+0000: System memory information:
+    Total Physical memory: 4.00 GB
+    Free Physical memory: 115.89 MB
+    Committed virtual memory: 3.17 GB
+    Total swap space: 4.00 GB
+    Free swap space: 837.68 MB
+2012-07-27 12:43:12.624+0000: JVM memory information:
+    Free  memory: 35.87 MB
+    Total memory: 81.06 MB
+    Max   memory: 493.75 MB
+    Garbage Collector: ParNew: [Par Eden Space, Par Survivor Space]
+    Garbage Collector: ConcurrentMarkSweep: [Par Eden Space, Par Survivor Space, CMS Old Gen, CMS Perm Gen]
+    Memory Pool: Code Cache (Non-heap memory): committed=3.75 MB, used=3.67 MB, max=48.00 MB, threshold=0.00 B
+    Memory Pool: Par Eden Space (Heap memory): committed=16.63 MB, used=679.74 kB, max=50.00 MB, threshold=?
+    Memory Pool: Par Survivor Space (Heap memory): committed=2.06 MB, used=1.61 MB, max=6.25 MB, threshold=?
+    Memory Pool: CMS Old Gen (Heap memory): committed=62.38 MB, used=42.92 MB, max=437.50 MB, threshold=0.00 B
+    Memory Pool: CMS Perm Gen (Non-heap memory): committed=53.06 MB, used=38.22 MB, max=82.00 MB, threshold=0.00 B
+2012-07-27 12:43:12.630+0000: Operating system information:
+    Operating System: Mac OS X; version: 10.7.4; arch: x86_64; cpus: 4
+    Max number of file descriptors: 10240
+    Number of open file descriptors: 108
+    Process id: 17858@gotham-city
+    Byte order: LITTLE_ENDIAN
+2012-07-27 12:43:12.634+0000: JVM information:
+    VM Name: Java HotSpot(TM) 64-Bit Server VM
+    VM Vendor: Apple Inc.
+    VM Version: 20.8-b03-424
+    JIT compiler: HotSpot 64-Bit Tiered Compilers
+    VM Arguments: [-Djdk.home=, -Djruby.home=/Users/Rege/.rvm/rubies/jruby-1.6.7, -Djruby.script=jruby, -Djruby.shell=/bin/sh, -Djffi.boot.library.path=/Users/Rege/.rvm/rubies/jruby-1.6.7/lib/native/Darwin, -Xmx500m, -Xss2048k, -Djruby.memory.max=500m, -Djruby.stack.max=2048k, -Xbootclasspath/a:/Users/Rege/.rvm/rubies/jruby-1.6.7/lib/jruby.jar, -Dfile.encoding=UTF-8]
+2012-07-27 12:43:12.635+0000: Java classpath:
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar
+     [loader.3] file:/System/Library/Java/Extensions/dns_sd.jar
+     [bootstrap] /System/Library/Frameworks/JavaVM.framework/Versions/A/Frameworks/JavaRuntimeSupport.framework/Versions/A/Resources/Java/JavaRuntimeSupport.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/geronimo-jta_1.1_spec-1.1.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/server-api-1.7.1.jar
+     [classpath + loader.2] file:/Users/Rege/Sites/tweb/
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-graph-algo-1.7.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/MRJToolkit.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-beanutils-core-1.8.0.jar
+     [loader.3] file:/System/Library/Java/Extensions/vecmath.jar
+     [loader.3] file:/System/Library/Java/Extensions/libmlib_jai.jnilib
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/servlet-api-2.5-20081211.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-graph-matching-1.7.1.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/dnsns.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-collections-3.2.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/neo4j-server-1.7-static-web.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/lucene-core-3.5.0.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-util-3.2.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar
+     [loader.3] file:/System/Library/Java/Extensions/libJ3D.jnilib
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jansi-1.5.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/json-1.7.3-java/lib/json/ext/generator.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jackson-mapper-asl-1.8.3.jar
+     [loader.3] file:/System/Library/Java/Extensions/mlibwrapper_jai.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/localedata.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-3.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/QTJava.zip
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/ruby-debug-base-0.10.4-java/lib/ruby_debug.jar
+     [bootstrap] /Users/Rege/.rvm/rubies/jruby-1.6.7/lib/jruby.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/rrd4j-2.0.7.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/blueprints-core-1.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-configuration-1.6.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jersey-server-1.9.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jettison-1.3.jar
+     [loader.3] file:/System/Library/Java/Extensions/libJ3DAudio.jnilib
+     [loader.3] file:/System/Library/Java/Extensions/libAppleScriptEngine.jnilib
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/gremlin-java-1.5.jar
+     [loader.3] file:/System/Library/Java/Extensions/j3daudio.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-lucene-index-1.7.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/libJ3DUtils.jnilib
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jsr311-api-1.1.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jackson-core-asl-1.8.3.jar
+     [loader.3] file:/System/Library/Java/Extensions/libQTJNative.jnilib
+     [loader.3] file:/System/Library/Java/Extensions/j3dcore.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jetty-6.1.25.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-analysis-3.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jackson-jaxrs-1.8.3.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/groovy-1.8.5.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-udc-1.7.1.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar
+     [loader.3] file:/System/Library/Java/Extensions/j3dutils.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/pipes-1.0.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/mimepull-1.6.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-shell-1.7.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/jai_core.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/slf4j-jdk14-1.6.1.jar
+     [loader.3] file:/System/Library/Java/Extensions/jai_codec.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-kernel-1.7.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-digester-1.8.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jcl-over-slf4j-1.6.1.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/sunjce_provider.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jersey-core-1.9.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/org.apache.servicemix.bundles.jline-0.9.94_1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/bcprov-jdk16-140.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jetty-util-6.1.25.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/scala-library-2.9.0-1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/blueprints-neo4j-graph-1.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-io-1.4.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/gremlin-groovy-1.5.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/neo4j-server-1.7.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-lang-2.4.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-jmx-1.7.1.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/jce.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/log4j-over-slf4j-1.6.1.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-commons-3.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/stax-api-1.0.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/asm-tree-3.2.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/jdbc-postgres-9.1.901/lib/postgresql-9.1-901.jdbc4.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/antlr-2.7.7.jar
+     [loader.3] file:/System/Library/Java/Extensions/AppleScriptEngine.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-beanutils-1.8.0.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/apple_provider.jar
+     [bootstrap] /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/activerecord-jdbc-adapter-1.2.2/lib/arjdbc/jdbc/adapter_java.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/slf4j-api-1.6.1.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/json-1.7.3-java/lib/json/ext/parser.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-community-1.7.1-java/lib/neo4j-community/jars/neo4j-cypher-1.7.1.jar
+     [loader.3] file:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/sunpkcs11.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/jersey-multipart-1.9.jar
+     [loader.0] file:/Users/Rege/.rvm/gems/jruby-1.6.7/gems/neo4j-admin-0.1.0-java/lib/neo4j-admin/jars/commons-logging-1.1.1.jar
+2012-07-27 12:43:12.639+0000: Library path:
+    /Users/Rege/Sites/tweb
+    /Library/Java/Extensions
+    /System/Library/Java/Extensions
+    /usr/lib/java
+2012-07-27 12:43:12.639+0000: System.properties:
+    jruby.home = /Users/Rege/.rvm/rubies/jruby-1.6.7
+    sun.boot.library.path = /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries
+    awt.nativeDoubleBuffering = true
+    gopherProxySet = false
+    mrj.build = 11M3720
+    path.separator = :
+    file.encoding.pkg = sun.io
+    sun.java.launcher = SUN_STANDARD
+    user.country = US
+    sun.os.patch.level = unknown
+    user.dir = /Users/Rege/Sites/tweb
+    jdk.home = 
+    sun.jnu.encoding = MacRoman
+    jruby.memory.max = 500m
+    sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+    http.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+    jffi.boot.library.path = /Users/Rege/.rvm/rubies/jruby-1.6.7/lib/native/Darwin
+    user.home = /Users/Rege
+    user.timezone = America/Los_Angeles
+    file.encoding = UTF-8
+    jruby.stack.max = 2048k
+    jruby.script = jruby
+    user.name = Rege
+    jruby.shell = /bin/sh
+    sun.java.command = org/jruby/Main --1.9 /Users/Rege/.rvm/gems/jruby-1.6.7/bin/ruby_noexec_wrapper /Users/Rege/.rvm/gems/jruby-1.6.7/bin/rails console
+    sun.arch.data.model = 64
+    user.language = en
+    awt.toolkit = apple.awt.CToolkit
+    file.separator = /
+    sun.io.unicode.encoding = UnicodeLittle
+    sun.cpu.endian = little
+    mrj.version = 1070.1.6.0_33-424
+    socksNonProxyHosts = local|*.local|169.254/16|*.169.254/16
+    ftp.nonProxyHosts = local|*.local|169.254/16|*.169.254/16
+    sun.cpu.isalist = 
+2012-07-27 12:43:12.639+0000: --- STARTUP diagnostics END ---
+2012-07-27 12:43:12.693+0000: Extension org.neo4j.kernel.KernelExtension[kernel jmx] loaded ok
+2012-07-27 12:43:12.815+0000: Extension org.neo4j.kernel.KernelExtension[shell] loaded ok
+2012-07-27 12:43:12.823+0000: Extension org.neo4j.kernel.KernelExtension[kernel udc] loaded ok
+2012-07-27 12:43:12.827+0000: --- STARTUP diagnostics for KernelDiagnostics:Versions START ---
+2012-07-27 12:43:12.828+0000: Graph Database: org.neo4j.kernel.EmbeddedReadOnlyGraphDatabase StoreId[time:1343392942846, id:7622070116488899193, store version: 13561656364791302]
+2012-07-27 12:43:12.828+0000: Kernel version: Neo4j - Graph Database Kernel 1.7.1
+2012-07-27 12:43:12.828+0000: Neo4j component versions:
+2012-07-27 12:43:12.828+0000:   Neo4j - Graph Database Kernel 1.7.1
+2012-07-27 12:43:12.828+0000: --- STARTUP diagnostics for KernelDiagnostics:Versions END ---
+2012-07-27 12:43:12.832+0000: --- STARTUP diagnostics for NEO_STORE_VERSIONS START ---
+2012-07-27 12:43:12.833+0000: Store versions:
+    Store versions:
+      NeoStore v0.A.0
+      NodeStore v0.A.0
+      RelationshipStore v0.A.0
+      RelationshipTypeStore v0.A.0
+      PropertyStore v0.A.0
+      PropertyIndexStore v0.A.0
+      StringPropertyStore v0.A.0
+      ArrayPropertyStore v0.A.0
+2012-07-27 12:43:12.833+0000: --- STARTUP diagnostics for NEO_STORE_VERSIONS END ---
+2012-07-27 12:43:12.833+0000: --- STARTUP diagnostics for NEO_STORE_ID_USAGE START ---
+2012-07-27 12:43:12.833+0000: Id usage:
+    Id usage:
+      NodeStore: used=2912 high=2911
+      RelationshipStore: used=0 high=-1
+      RelationshipTypeStore: used=0 high=-1
+      PropertyStore: used=0 high=-1
+      PropertyIndexStore: used=0 high=-1
+      StringPropertyStore: used=1 high=0
+      ArrayPropertyStore: used=1 high=0
+2012-07-27 12:43:12.834+0000: --- STARTUP diagnostics for NEO_STORE_ID_USAGE END ---
+2012-07-27 12:43:12.834+0000: --- STARTUP diagnostics for KernelDiagnostics:StoreFiles START ---
+2012-07-27 12:43:12.834+0000: Storage files:
+    active_tx_log: 11.00 B
+    index:
+      lucene-store.db: 40.00 B
+      lucene.log.1: 16.00 B
+      lucene.log.active: 4.00 B
+    - Total: 60.00 B
+    lock: 0.00 B
+    messages.log: 38.45 kB
+    neostore: 54.00 B
+    neostore.id: 9.00 B
+    neostore.nodestore.db: 25.59 kB
+    neostore.nodestore.db.id: 9.00 B
+    neostore.propertystore.db: 0.00 B
+    neostore.propertystore.db.arrays: 128.00 B
+    neostore.propertystore.db.arrays.id: 9.00 B
+    neostore.propertystore.db.id: 9.00 B
+    neostore.propertystore.db.index: 0.00 B
+    neostore.propertystore.db.index.id: 9.00 B
+    neostore.propertystore.db.index.keys: 38.00 B
+    neostore.propertystore.db.index.keys.id: 9.00 B
+    neostore.propertystore.db.strings: 128.00 B
+    neostore.propertystore.db.strings.id: 9.00 B
+    neostore.relationshipstore.db: 0.00 B
+    neostore.relationshipstore.db.id: 9.00 B
+    neostore.relationshiptypestore.db: 0.00 B
+    neostore.relationshiptypestore.db.id: 9.00 B
+    neostore.relationshiptypestore.db.names: 38.00 B
+    neostore.relationshiptypestore.db.names.id: 9.00 B
+    nioneo_logical.log.1: 16.00 B
+    nioneo_logical.log.active: 4.00 B
+    tm_tx_log.1: 0.00 B
+2012-07-27 12:42:23.291+0000: --- STARTUP diagnostics for KernelDiagnostics:StoreFiles END ---
+2012-07-27 12:42:23.293+0000: Started - database is now available
+2012-07-27 12:42:23.297+0000: GC Monitor started. 
+2012-07-27 12:52:01.801+0000: GC Monitor: Application threads blocked for an additional 852ms [total block time: 0.852s]
+2012-07-27 13:33:12.020+0000: GC Monitor: Application threads blocked for an additional 1028930ms [total block time: 1029.782s]
+2012-07-27 12:43:12.836+0000: --- STARTUP diagnostics for KernelDiagnostics:StoreFiles END ---
+2012-07-27 12:43:12.838+0000: Started - database is now available
+2012-07-27 12:43:12.840+0000: GC Monitor started. 
+2012-07-27 13:33:13.989+0000: GC Monitor: Application threads blocked for an additional 1028930ms [total block time: 1028.93s]
+2012-07-27 13:58:51.478+0000: GC Monitor: Application threads blocked for an additional 4178ms [total block time: 1033.96s]
+2012-07-27 13:59:58.533+0000: GC Monitor: Application threads blocked for an additional 1165ms [total block time: 1030.095s]
+2012-07-27 14:58:52.471+0000: GC Monitor: Application threads blocked for an additional 1013ms [total block time: 1034.973s]
+2012-07-27 15:00:00.046+0000: GC Monitor: Application threads blocked for an additional 1498ms [total block time: 1031.593s]
+2012-07-27 15:53:49.323+0000: GC Monitor: Application threads blocked for an additional 912ms [total block time: 1032.505s]
+2012-07-27 15:53:49.323+0000: GC Monitor: Application threads blocked for an additional 912ms [total block time: 1035.885s]
+2012-07-27 15:58:54.056+0000: GC Monitor: Application threads blocked for an additional 677ms [total block time: 1036.562s]
+2012-07-27 16:00:01.180+0000: GC Monitor: Application threads blocked for an additional 219ms [total block time: 1032.724s]
+2012-07-27 16:58:54.578+0000: GC Monitor: Application threads blocked for an additional 480ms [total block time: 1037.042s]
+2012-07-27 17:00:01.456+0000: GC Monitor: Application threads blocked for an additional 224ms [total block time: 1032.948s]
+2012-07-27 17:58:54.934+0000: GC Monitor: Application threads blocked for an additional 321ms [total block time: 1037.363s]
+2012-07-27 18:00:01.710+0000: GC Monitor: Application threads blocked for an additional 258ms [total block time: 1033.206s]
+2012-07-27 18:48:36.000+0000: GC Monitor: Application threads blocked for an additional 1206966ms [total block time: 2240.172s]
+2012-07-27 18:48:36.019+0000: GC Monitor: Application threads blocked for an additional 1206965ms [total block time: 2244.328s]
+2012-07-27 19:12:54.048+0000: GC Monitor: Application threads blocked for an additional 183518ms [total block time: 2427.846s]
+2012-07-27 19:12:54.800+0000: GC Monitor: Application threads blocked for an additional 183519ms [total block time: 2423.691s]
+2012-07-27 19:22:05.879+0000: GC Monitor: Application threads blocked for an additional 463ms [total block time: 2428.309s]
+2012-07-27 19:23:12.491+0000: GC Monitor: Application threads blocked for an additional 332ms [total block time: 2424.023s]
+2012-07-27 19:58:09.009+0000: GC Monitor: Application threads blocked for an additional 32107ms [total block time: 2460.416s]
+2012-07-27 19:58:09.021+0000: GC Monitor: Application threads blocked for an additional 32107ms [total block time: 2456.13s]
+2012-07-27 20:15:56.011+0000: GC Monitor: Application threads blocked for an additional 61151ms [total block time: 2517.281s]
+2012-07-27 20:15:56.070+0000: GC Monitor: Application threads blocked for an additional 61151ms [total block time: 2521.567s]
+2012-07-27 20:23:39.431+0000: GC Monitor: Application threads blocked for an additional 354ms [total block time: 2521.921s]
+2012-07-27 20:24:45.933+0000: GC Monitor: Application threads blocked for an additional 235ms [total block time: 2517.516s]
+2012-07-27 21:57:35.813+0000: GC Monitor: Application threads blocked for an additional 2508736ms [total block time: 5026.252s]
+2012-07-27 21:57:36.276+0000: GC Monitor: Application threads blocked for an additional 2508736ms [total block time: 5030.657s]
+2012-07-27 21:59:04.000+0000: GC Monitor: Application threads blocked for an additional 67273ms [total block time: 5097.93s]
+2012-07-27 21:59:04.076+0000: GC Monitor: Application threads blocked for an additional 67273ms [total block time: 5093.525s]
+2012-07-27 22:06:37.461+0000: GC Monitor: Application threads blocked for an additional 2058ms [total block time: 5099.988s]
+2012-07-27 22:07:42.386+0000: GC Monitor: Application threads blocked for an additional 500ms [total block time: 5094.025s]
+2012-07-27 23:22:58.056+0000: GC Monitor: Application threads blocked for an additional 4232142ms [total block time: 9326.167s]
+2012-07-27 23:22:59.064+0000: GC Monitor: Application threads blocked for an additional 4232141ms [total block time: 9332.129s]
+2012-07-27 23:38:52.071+0000: GC Monitor: Application threads blocked for an additional 29096ms [total block time: 9355.263s]
+2012-07-27 23:38:52.349+0000: GC Monitor: Application threads blocked for an additional 29096ms [total block time: 9361.225s]
+2012-07-28 00:49:25.094+0000: GC Monitor: Application threads blocked for an additional 4201969ms [total block time: 13563.194s]
+2012-07-28 00:49:25.844+0000: GC Monitor: Application threads blocked for an additional 4201968ms [total block time: 13557.231s]
+2012-07-28 02:45:00.772+0000: GC Monitor: Application threads blocked for an additional 6899175ms [total block time: 20456.406s]
+2012-07-28 02:45:00.851+0000: GC Monitor: Application threads blocked for an additional 6899399ms [total block time: 20462.592s]
+2012-07-28 04:31:12.008+0000: GC Monitor: Application threads blocked for an additional 4200917ms [total block time: 24663.51s]
+2012-07-28 04:31:12.015+0000: GC Monitor: Application threads blocked for an additional 4200917ms [total block time: 24657.324s]
+2012-07-28 10:01:56.800+0000: GC Monitor: Application threads blocked for an additional 19830367ms [total block time: 44493.875s]
+2012-07-28 10:01:56.861+0000: GC Monitor: Application threads blocked for an additional 19830456ms [total block time: 44487.78s]
+2012-07-28 10:03:10.230+0000: GC Monitor: Application threads blocked for an additional 2375ms [total block time: 44496.254s]
+2012-07-28 10:04:14.809+0000: GC Monitor: Application threads blocked for an additional 1989ms [total block time: 44489.77s]
+2012-07-28 11:03:10.622+0000: GC Monitor: Application threads blocked for an additional 464ms [total block time: 44496.715s]
+2012-07-28 11:04:15.101+0000: GC Monitor: Application threads blocked for an additional 267ms [total block time: 44490.035s]
+2012-07-28 12:25:11.087+0000: GC Monitor: Application threads blocked for an additional 4199867ms [total block time: 48689.902s]
+2012-07-28 12:25:11.088+0000: GC Monitor: Application threads blocked for an additional 4199867ms [total block time: 48696.586s]
+2012-07-28 13:30:49.947+0000: GC Monitor: Application threads blocked for an additional 3917041ms [total block time: 52613.625s]
+2012-07-28 13:30:50.052+0000: GC Monitor: Application threads blocked for an additional 3917058ms [total block time: 52606.96s]
+2012-07-28 13:44:15.050+0000: GC Monitor: Application threads blocked for an additional 659612ms [total block time: 53266.57s]
+2012-07-28 13:44:15.090+0000: GC Monitor: Application threads blocked for an additional 659613ms [total block time: 53273.234s]
+2012-07-28 13:56:21.035+0000: GC Monitor: Application threads blocked for an additional 562884ms [total block time: 53829.457s]
+2012-07-28 13:56:21.083+0000: GC Monitor: Application threads blocked for an additional 562885ms [total block time: 53836.12s]
+2012-07-28 15:07:58.016+0000: GC Monitor: Application threads blocked for an additional 4201905ms [total block time: 58038.027s]
+2012-07-28 15:07:58.077+0000: GC Monitor: Application threads blocked for an additional 4201905ms [total block time: 58031.36s]
+2012-07-29 01:52:31.927+0000: GC Monitor: Application threads blocked for an additional 38658413ms [total block time: 96689.77s]
+2012-07-29 01:52:31.928+0000: GC Monitor: Application threads blocked for an additional 38658354ms [total block time: 96696.38s]
+2012-07-29 03:10:41.065+0000: GC Monitor: Application threads blocked for an additional 4200845ms [total block time: 100890.62s]
+2012-07-29 03:10:41.089+0000: GC Monitor: Application threads blocked for an additional 4200844ms [total block time: 100897.23s]
+2012-07-29 14:17:05.887+0000: GC Monitor: Application threads blocked for an additional 39966739ms [total block time: 140863.97s]
+2012-07-29 14:17:05.960+0000: GC Monitor: Application threads blocked for an additional 39966756ms [total block time: 140857.38s]
+2012-07-29 14:49:07.706+0000: GC Monitor: Application threads blocked for an additional 3399ms [total block time: 140867.36s]
+2012-07-29 14:50:11.073+0000: GC Monitor: Application threads blocked for an additional 2332ms [total block time: 140859.72s]
+2012-07-29 15:23:36.065+0000: GC Monitor: Application threads blocked for an additional 79513ms [total block time: 140939.22s]
+2012-07-29 15:23:36.080+0000: GC Monitor: Application threads blocked for an additional 79513ms [total block time: 140946.88s]
+2012-07-29 15:24:22.067+0000: GC Monitor: Application threads blocked for an additional 24296ms [total block time: 140963.52s]
+2012-07-29 15:24:22.067+0000: GC Monitor: Application threads blocked for an additional 24296ms [total block time: 140971.17s]
+2012-07-29 15:50:51.829+0000: GC Monitor: Application threads blocked for an additional 365ms [total block time: 140971.53s]
+2012-07-29 15:51:55.084+0000: GC Monitor: Application threads blocked for an additional 197ms [total block time: 140963.72s]
+2012-07-29 16:03:53.050+0000: GC Monitor: Application threads blocked for an additional 150532ms [total block time: 141122.06s]
+2012-07-29 16:03:53.051+0000: GC Monitor: Application threads blocked for an additional 150532ms [total block time: 141114.23s]
+2012-07-29 16:36:18.036+0000: GC Monitor: Application threads blocked for an additional 1646662ms [total block time: 142768.73s]
+2012-07-29 16:36:18.039+0000: GC Monitor: Application threads blocked for an additional 1646660ms [total block time: 142760.9s]
+2012-07-30 03:44:48.038+0000: GC Monitor: Application threads blocked for an additional 38766524ms [total block time: 181527.42s]
+2012-07-30 03:44:48.049+0000: GC Monitor: Application threads blocked for an additional 38766524ms [total block time: 181535.25s]
+2012-07-30 03:54:27.053+0000: GC Monitor: Application threads blocked for an additional 60493ms [total block time: 181595.75s]
+2012-07-30 03:54:27.078+0000: GC Monitor: Application threads blocked for an additional 60493ms [total block time: 181587.92s]
+2012-07-30 04:07:56.352+0000: GC Monitor: Application threads blocked for an additional 314ms [total block time: 181596.06s]
+2012-07-30 04:08:59.530+0000: GC Monitor: Application threads blocked for an additional 236ms [total block time: 181588.16s]
+2012-07-30 05:22:55.084+0000: GC Monitor: Application threads blocked for an additional 4199989ms [total block time: 185796.05s]
+2012-07-30 05:22:55.097+0000: GC Monitor: Application threads blocked for an additional 4199989ms [total block time: 185788.14s]
+2012-07-30 11:37:21.121+0000: GC Monitor: Application threads blocked for an additional 22443610ms [total block time: 208239.66s]
+2012-07-30 11:37:21.210+0000: GC Monitor: Application threads blocked for an additional 22443651ms [total block time: 208231.8s]
+2012-07-30 12:31:54.695+0000: GC Monitor: Application threads blocked for an additional 2075ms [total block time: 208241.73s]
+2012-07-30 12:32:57.491+0000: GC Monitor: Application threads blocked for an additional 1720ms [total block time: 208233.52s]
+2012-07-30 13:35:45.018+0000: GC Monitor: Application threads blocked for an additional 2401812ms [total block time: 210643.55s]
+2012-07-30 13:35:45.044+0000: GC Monitor: Application threads blocked for an additional 2401812ms [total block time: 210635.33s]
+2012-07-30 13:41:42.971+0000: GC Monitor: Application threads blocked for an additional 240ms [total block time: 210643.8s]
+2012-07-30 13:41:42.971+0000: GC Monitor: Application threads blocked for an additional 240ms [total block time: 210635.56s]
+2012-07-30 13:58:12.067+0000: GC Monitor: Application threads blocked for an additional 382351ms [total block time: 211026.14s]
+2012-07-30 13:58:12.377+0000: GC Monitor: Application threads blocked for an additional 382351ms [total block time: 211017.92s]
+2012-07-30 14:26:46.049+0000: GC Monitor: Application threads blocked for an additional 1682203ms [total block time: 212708.34s]
+2012-07-30 14:26:46.072+0000: GC Monitor: Application threads blocked for an additional 1682203ms [total block time: 212700.12s]
+2012-07-30 14:46:21.608+0000: GC Monitor: Application threads blocked for an additional 372ms [total block time: 212708.72s]
+2012-07-30 14:47:24.291+0000: GC Monitor: Application threads blocked for an additional 190ms [total block time: 212700.31s]
+2012-07-30 15:11:56.021+0000: GC Monitor: Application threads blocked for an additional 430ms [total block time: 212700.73s]
+2012-07-30 15:11:56.027+0000: GC Monitor: Application threads blocked for an additional 431ms [total block time: 212709.16s]
+2012-07-30 16:40:21.029+0000: GC Monitor: Application threads blocked for an additional 4122388ms [total block time: 216823.14s]
+2012-07-30 16:40:21.062+0000: GC Monitor: Application threads blocked for an additional 4122388ms [total block time: 216831.53s]
+2012-07-30 17:33:09.057+0000: GC Monitor: Application threads blocked for an additional 2870440ms [total block time: 219693.56s]
+2012-07-30 17:33:09.057+0000: GC Monitor: Application threads blocked for an additional 2870440ms [total block time: 219701.97s]
+2012-07-30 17:42:55.163+0000: GC Monitor: Application threads blocked for an additional 298ms [total block time: 219702.27s]
+2012-07-30 17:43:57.770+0000: GC Monitor: Application threads blocked for an additional 246ms [total block time: 219693.83s]
+2012-07-30 18:29:39.069+0000: GC Monitor: Application threads blocked for an additional 6841ms [total block time: 219709.12s]
+2012-07-30 18:29:39.092+0000: GC Monitor: Application threads blocked for an additional 6841ms [total block time: 219700.66s]
+2012-07-30 18:41:45.021+0000: GC Monitor: Application threads blocked for an additional 718781ms [total block time: 220427.89s]
+2012-07-30 18:41:45.023+0000: GC Monitor: Application threads blocked for an additional 718780ms [total block time: 220419.44s]
+2012-07-30 19:13:15.039+0000: GC Monitor: Application threads blocked for an additional 1141562ms [total block time: 221561.02s]
+2012-07-30 19:13:15.081+0000: GC Monitor: Application threads blocked for an additional 1141563ms [total block time: 221569.45s]
+2012-07-30 19:14:02.656+0000: GC Monitor: Application threads blocked for an additional 341ms [total block time: 221569.8s]
+2012-07-30 19:15:05.143+0000: GC Monitor: Application threads blocked for an additional 260ms [total block time: 221561.27s]

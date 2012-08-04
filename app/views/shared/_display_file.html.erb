@@ -1,0 +1,8 @@
+<%# Needs file object with name and type%>
+<% id = "file:" + file[:name].to_s %>
+<a class='file' id='<%= id%>' data-path='<%= file[:path]%>'>
+  <p>
+  <i class='icon-file'></i><%= file[:name]%>
+  </p>
+</a>
+

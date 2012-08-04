@@ -1,0 +1,25 @@
+<% turl = @listing.embedded_trust_url %>
+<a href="<%= turl%>" class="disabled_url">
+  <pre class="url"> <%= turl %> </pre>
+</a>
+
+<div class="hidden-phone">
+  <div id="d_clip_container" class="relative">
+    <input type="submit" class="btn" id="d_clip_button" value="Copy" />
+  </div>
+</div>
+<div class="visible-phone alert alert-info">
+  Copy above URL into your post
+</div>
+
+<%= javascript_tag do%>
+  ZeroClipboard.setMoviePath("<%= root_url + 'ZeroClipboard.swf'%>");
+  var clip = new ZeroClipboard.Client();
+  /* Directly store text to be copied rather than reading it
+   * from the HTML div */
+  clip.setText("<%= turl %>");
+  clip.setHandCursor(true);
+  clip.glue( 'd_clip_button', 'd_clip_container' );
+<% end %>
+
+

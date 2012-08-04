@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  listing_id: 1
+  stars: 1
+  rater_id: 1
+  rater_comment: MyText
+
+two:
+  listing_id: 1
+  stars: 1
+  rater_id: 1
+  rater_comment: MyText

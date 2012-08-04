@@ -1,0 +1,43 @@
+<%uid = session[:userid]%>
+	
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "cloudgator", :root, :class => "brand"%>
+      <% if uid.nil? # User is not logged in%>
+          <!--
+          <li><%= link_to "Login", :controller => :user, :action =>:login %></li>
+          <li><%= link_to "Login with Facebook", :controller => :user, :action => :login, :provider => "facebook", :role => "seller"%></li>
+          <li><%= link_to "Register", :controller => :user, :action => :register %></li>
+          -->
+      <% else # User is logged in%>
+          <% current_user = User.find(uid) %>
+          <ul class="nav"><li>
+              <%= link_to :controller => :user, :action => :home do%>
+                <i class="icon-home icon-white"></i> Home
+              <%end%>
+          </li></ul>
+          <!-- Drop down menu with user's profile pic -->
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="nav-collapse collapse" style="height: 0px;">
+            <ul class="nav pull-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                  <img src="<%= current_user.get_profile_picture_url %>"</img>  
+                  <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li><%= link_to "Logout", "/user/logout", :class => "active" %></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+      <%end%>
+    </div> <!-- container -->
+  </div> <!-- navbar-inner -->
+</div> <!-- navbar navbar-fixed-top -->
+
