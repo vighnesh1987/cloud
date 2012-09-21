@@ -17,6 +17,7 @@ ACCESS_TYPE = :dropbox #The two valid values here are :app_folder and :dropbox
 #match 'db/upload', :controller => 'db', :action => 'upload'
 
 class DropboxController < ApplicationController
+  include DropboxHelper
     @@DROPBOX_LOGO = "http://dl.dropbox.com/sh/sf6whlu5dae4869/F0GHIVNrvB/Dropbox%20Logos/White/esuslogo101409%20white.GIF"
     class << self
       def get_logo
@@ -27,22 +28,18 @@ class DropboxController < ApplicationController
     attr_accessor :dbsession
 
     def authorize
-      @dbsession = DropboxSession.new(APP_KEY, APP_SECRET)
-      @dbsession.get_request_token
-      authorize_url = @dbsession.get_authorize_url(url_for :controller => :dropbox, :action => :callback)
-      # Make the user sign in and authorize this token
-      session[:dbsession] = @dbsession
-      redirect_to authorize_url
-      #puts "Please visit that website and hit 'Allow', then hit Enter here."
-      #gets
-
-      ## This will fail if the user didn't visit the above URL and hit 'Allow'
-      #session.get_access_token
-
-      #client = DropboxClient.new(session, ACCESS_TYPE)
-      #puts "linked account:", client.account_info().inspect
+      if session[:dbsession].nil?
+        @dbsession = DropboxSession.new(APP_KEY, APP_SECRET)
+        @dbsession.get_request_token
+        authorize_url = @dbsession.get_authorize_url(url_for :controller => :dropbox, :action => :callback)
+        # Make the user sign in and authorize this token
+        session[:dbsession] = @dbsession
+        redirect_to authorize_url
+      else
+        redirect_to :action => :callback
+      end
     end
-  
+
     def callback
       @dbsession = session[:dbsession]
       token = @dbsession.get_access_token
@@ -56,23 +53,13 @@ class DropboxController < ApplicationController
         puts user_hash
         storage.save
       end
+      session[:provider_tab] = :dropbox_tab
       redirect_to :root
     end
 
-    def get_name(path)
-      require 'pathname'
-      Pathname.new(path).basename.to_s
-    end
 
     def get_meta
-      path = params[:path]
-      @dbclient = session[:dbclient]
-      metainfo = @dbclient.metadata(path)
-      file_list = metainfo["contents"]
-      ret_list = []
-      file_list.each do |f|
-        ret_list << {:name => get_name(f["path"]), :path => f["path"], :is_dir => f["is_dir"]}
-      end
+      ret_list = get_dropbox_file_list(params[:path])
       render :partial => "/shared/file_list", :locals => {:list => ret_list}
     end
 

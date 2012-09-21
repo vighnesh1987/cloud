@@ -1,5 +1,6 @@
 class UserController < ApplicationController
   include UserHelper 
+  include DropboxHelper
 
   # security_code needs to be passed alongwith the FB login request
   #@security_code = ""
@@ -63,31 +64,11 @@ class UserController < ApplicationController
       uid = session[:userid]
       redirect_to :action => :login unless User.exists?(:id => uid)
       @user = User.find(uid)
-      @dropbox_file_list = get_dropbox_file_list
+      @dropbox_file_list = get_dropbox_file_list("/")
       @skydrive_file_list = ["Skydrive stuff", "Done"]
     else
       redirect_to :action => :login
     end
-  end
-
-  def get_name(path)
-    require 'pathname'
-    Pathname.new(path).basename.to_s
-  end
-
-  def get_dropbox_file_list
-    client = session[:dbclient]
-    if !client.nil?
-      metainfo = client.metadata('/')
-      file_list = metainfo["contents"]
-      ret_list = []
-      file_list.each do |f|
-        ret_list << {:name => get_name(f["path"]), :path => f["path"], :is_dir => f["is_dir"]}
-      end
-    else
-      ret_list = []
-    end
-    return ret_list
   end
 
   ######## FB AUTH ##############

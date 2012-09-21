@@ -8,20 +8,25 @@
         <%= render :partial => "shared/file_list", :locals => { :list => [] }%>
       </div>
       <div id="right-col">
-        <%= render :partial => "shared/file_list", :locals => { :list => @dropbox_file_list }%>
+        <% if session[:provider_tab] = :dropbox_tab %>
+          <%= render :partial => "shared/file_list", :locals => { :list => @dropbox_file_list }%>
+        <% end %>
       </div>
     </div>
   </div>
-
   <div class="span4">
     <div class="well sidebar-nav banners">
       <ul class="nav nav-list">
         <li>
           <%= render :partial => "brands/dropbox"%>
         </li>
+        <li>
+          <%= render :partial => "brands/box"%>
+        </li>
       </ul>
     </div>
   </div>
+
 </div>
 
 <script type="text/javascript">

@@ -1,0 +1,21 @@
+<div id="banner-box">
+  <a href="/box/authorize">
+    <%=image_tag("Box_Logo_White_transparent_2000x1000.png", :alt=>"box logo", :class=>"banner", :id=>"box-banner")%>
+  </a>
+</div>
+<div id="box-display">
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+      $("#box-banner").hover(
+        function() {
+          $(this).css("background-color", "black");
+        },
+        function() {
+          $(this).css("background-color", "#2E2E2E");
+        }
+        );
+      });
+</script>
+
